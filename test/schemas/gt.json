@@ -1,0 +1,48 @@
+{
+    "id": "gt",
+    "type": "object",
+    "properties": {
+        "created": {
+            "type": "date",
+            "$custom": [
+                {
+                    "test": "gt",
+                    "data": {
+                        "value": "now",
+                        "offset": -1,
+                        "interval": "days"
+                    }
+                }
+            ]
+        },
+        "due": {
+            "type": "date",
+            "$custom": [
+                {
+                    "test": "gt",
+                    "data": {
+                        "$ref": "/created",
+                        "offset": 7,
+                        "interval": "days"
+                    }
+                }
+            ]
+        },
+        "min": {
+            "type": "number",
+            "minimum": 0
+        },
+        "max": {
+            "type": "number",
+            "$custom": [
+                {
+                    "test": "gt",
+                    "data": {
+                        "$ref": "/min",
+                        "offset": 100
+                    }
+                }
+            ]
+        }
+    }
+}

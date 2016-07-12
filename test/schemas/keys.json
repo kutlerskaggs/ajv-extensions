@@ -1,0 +1,69 @@
+
+{
+    "type": "object",
+    "id": "keys",
+    "properties": {
+        "a": {
+            "type": "string"
+        },
+        "b": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string",
+            "enum": ["draft", "published", "unknown"]
+        }
+    },
+    "required": [
+        "status"
+    ],
+    "additionalProperties": true,
+    "$custom": [
+        {
+            "test": "keys",
+            "data": {
+                "forbidden": [
+                    "c"
+                ]
+            }
+        },
+        {
+            "test": "keys",
+            "data": {
+                "required": [
+                    "a"
+                ],
+                "forbidden": [
+                    "b"
+                ]
+            },
+            "conditions": [
+                {
+                    "condition": "has-status",
+                    "whitelist": [
+                        "draft"
+                    ]
+                }
+            ]
+        },
+        {
+            "test": "keys",
+            "data": {
+                "required": [
+                    "b"
+                ],
+                "forbidden": [
+                    "a"
+                ]
+            },
+            "conditions": [
+                {
+                    "condition": "has-status",
+                    "blacklist": [
+                        "draft"
+                    ]
+                }
+            ]
+        }
+    ]
+}

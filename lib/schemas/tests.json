@@ -1,0 +1,35 @@
+{
+    "id": "ajv-extensions",
+    "type": "array",
+    "items": {
+
+    },
+    "definitions": {
+        "test": {
+            "type": "object",
+            "properties": {
+                "test": {
+                    "type": "string",
+                    "enum": [
+                        "eq",
+                        "gt",
+                        "gte",
+                        "lt",
+                        "lte",
+                        "ne",
+                        "between",
+                        "notBetween",
+                        "in",
+                        "nin",
+                        "regex",
+                        "keys"
+                    ]
+                }
+            },
+            "required": [
+                "test"
+            ],
+            "additionalProperties": true
+        }
+    }
+}

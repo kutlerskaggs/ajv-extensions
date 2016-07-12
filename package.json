@@ -1,0 +1,34 @@
+{
+  "name": "ajv-extensions",
+  "version": "0.0.0",
+  "description": "additional json-schema validations for ajv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ajv",
+    "json",
+    "schema",
+    "json-schema",
+    "extension",
+    "addon",
+    "plugin"
+  ],
+  "author": "chris ludden",
+  "license": "MIT",
+  "dependencies": {
+    "json-pointer": "^0.5.0",
+    "lodash": "^4.13.1",
+    "moment": "^2.14.1"
+  },
+  "devDependencies": {
+    "ajv": "^4.1.7",
+    "chai": "^3.5.0",
+    "eslint": "^3.0.1",
+    "faker": "^3.1.0",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0"
+  }
+}
